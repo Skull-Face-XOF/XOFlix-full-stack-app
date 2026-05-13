@@ -26,15 +26,10 @@ def register(request):
 # LOGIN
 @api_view(['POST'])
 def login(request):
-    email = request.data.get("email")
+    username = request.data.get("username")
     password = request.data.get("password")
 
-    try:
-        user = User.objects.get(email=email)
-    except User.DoesNotExist:
-        return Response({"error": "Invalid credentials"}, status=400)
-
-    user = authenticate(username=user.username, password=password)
+    user = authenticate(username=username, password=password)
 
     if user is None:
         return Response({"error": "Invalid credentials"}, status=400)

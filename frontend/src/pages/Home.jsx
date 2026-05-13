@@ -12,11 +12,6 @@ export default function Home() {
     return null;
   }
 
-  const handleLogout = () => {
-    localStorage.removeItem("access");
-    localStorage.removeItem("refresh");
-    window.location.href = "/login";
-  };
 
   async function loadMovies() {
     const file = await fetch("/data/movies.json");
@@ -50,30 +45,6 @@ export default function Home() {
 
   return (
     <div id="home-container">
-
-      {/* Top Bar */}
-      <div
-        style={{
-          width: "100%",
-          height: "60px",
-          backgroundColor: "#003366",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "0 20px",
-          boxSizing: "border-box",
-        }}
-      >
-        <h2 style={{ color: "white", margin: 0, fontSize: "24px" }}> </h2>
-
-        <button
-          className="btn btn-danger"
-          style={{ padding: "6px 12px", fontSize: "14px" }}
-          onClick={handleLogout}
-        >
-          Logout
-        </button>
-      </div>
 
       {/* Main Content */}
       <div className="p-4">

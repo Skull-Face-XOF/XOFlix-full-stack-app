@@ -20,8 +20,7 @@ export default function Login() {
       localStorage.setItem("access", response.data.access);
       localStorage.setItem("refresh", response.data.refresh);
 
-
-      window.location.href = "/dashboard";
+      window.location.href = "/";
     } catch (err) {
       setError("Invalid username or password");
     }
