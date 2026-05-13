@@ -1,7 +1,12 @@
-FROM nginx:alpine
+FROM node:18
 
-# Copy your static files into Nginx's default HTML directory
-COPY . /usr/share/nginx/html
+WORKDIR /app
 
-# Expose port 80 (Nginx default)
-EXPOSE 80
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]

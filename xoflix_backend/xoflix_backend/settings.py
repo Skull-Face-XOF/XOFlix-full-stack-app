@@ -91,9 +91,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'xoflix_db',
         'USER': 'root',
-        'PASSWORD': 'root345',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'PASSWORD': 'Root345@!',
+        'HOST': '127.0.0.1',
+        'PORT': '3307',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        }
     }
 }
 
@@ -115,6 +118,12 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 
 
 # Internationalization

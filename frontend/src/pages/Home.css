@@ -1,0 +1,26 @@
+.card {
+  background-color: #003366 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 10px !important;
+}
+
+.card-body {
+  background-color: #003366 !important;
+  color: white !important;
+}
+
+.movie {
+  margin: 10px;
+}
+
+#results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.movie {
+  flex: 0 0 auto;
+}
